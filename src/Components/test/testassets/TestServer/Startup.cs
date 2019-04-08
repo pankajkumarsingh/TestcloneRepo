@@ -56,7 +56,7 @@ namespace TestServer
 
                 subdirApp.UseEndpoints(endpoints =>
                 {
-                    endpoints.MapHub<ComponentHub>(ComponentHub.DefaultPath).AddComponent<IEndpointConventionBuilder, Index>(selector: "root");
+                    endpoints.MapHub<ComponentHub>(ComponentHub.DefaultPath).AddComponent(typeof(Index), selector: "root");
                 });
 
                 subdirApp.MapWhen(
